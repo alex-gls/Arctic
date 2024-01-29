@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!-- created with Phobos 1.0.1 "Capricious Choutengan" -->
+  <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="Polygon">
+    <link name="link_Cube">
+      <inertial>
+        <origin xyz="-0.04492 0.00536 0" rpy="0 0 0"/>
+        <mass value="10.0"/>
+        <inertia ixx="0.82308" ixy="0" ixz="0" iyy="5.19654" iyz="0" izz="5.94254"/>
+      </inertial>
+      <visual name="Cube">
+        <origin xyz="-0.04492 0.00536 0" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://arc_description/meshes/Polygon/stl/Cube.001.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <collision name="Cube">
+        <origin xyz="-0.04492 0.00536 0" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://arc_description/meshes/Polygon/stl/Cube.099.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="black"/>
+      </collision>
+    </link>
+
+    <link name="polygon">
+      <inertial>
+        <origin xyz="0 0 0.12956" rpy="0 0 0"/>
+        <mass value="100.0"/>
+        <inertia ixx="32.86259" ixy="0" ixz="0" iyy="205.90488" iyz="0" izz="235.78073"/>
+      </inertial>
+      <visual name="Cylinder">
+        <origin xyz="0.69799 -1.19542 0.04584" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://arc_description/meshes/Polygon/stl/Cube.002.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <visual name="Cylinder2">
+        <origin xyz="0.69799 -2.3247 0.04584" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://arc_description/meshes/Polygon/stl/Cube.003.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <visual name="Polygon">
+        <origin xyz="0.86451 2.37903 0.04978" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://arc_description/meshes/Polygon/stl/Plane.001.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <visual name="Polygon.002">
+        <origin xyz="0 -0.01675 0.06478" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://arc_description/meshes/Polygon/stl/Plane.002.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <collision name="Cylinder">
+        <origin xyz="0.69799 -1.19542 0.04584" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://arc_description/meshes/Polygon/stl/Cube.100.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="black"/>
+      </collision>
+      <collision name="Cylinder2">
+        <origin xyz="0.69799 -2.3247 0.04584" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://arc_description/meshes/Polygon/stl/Cube.101.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="black"/>
+      </collision>
+      <collision name="Polygon">
+        <origin xyz="0.86451 2.37903 0.04978" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://arc_description/meshes/Polygon/stl/Plane.009.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="black"/>
+        
+      </collision>
+      <collision name="Polygon.002">
+        <origin xyz="0 -0.01675 0.06478" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://arc_description/meshes/Polygon/stl/Plane.003.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="link_Cube_1" type="revolute">
+      <origin xyz="0.69799 -1.75948 0.06447" rpy="1.5708 -0.11887 0"/>
+      <parent link="polygon"/>
+      <child link="link_Cube"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <material name="black">
+      <color rgba="0.1 0.1 0.8 1.0"/>
+    </material>
+
+
+  </robot>

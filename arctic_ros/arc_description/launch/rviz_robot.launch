@@ -1,0 +1,27 @@
+<launch>
+
+	<!-- Arguments -->
+	<arg name="gui" default="false" />
+	<!-- <arg name="model" default="$(find arc_description)/urdf/Arctic.urdf"/> -->
+	<arg name="model" default="$(find arc_description)/urdf/robot_core.xacro"/>
+	
+	<!-- Params -->
+	<param name="use_gui" value="$(arg gui)" />
+	<arg name="rvizconfig" default="$(find arc_description)/rviz/urdf.rviz" />
+
+	<!-- Robot Description from URDF -->
+	<param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)" />
+
+	<!-- On/Off joint_state_gui -->
+	<node if="$(arg gui)" name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+	<!-- Start Rviz -->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+	<!-- <param name="/use_sim_time" value="true" />	 -->
+
+	<include file="$(find arc_controler)/launch/GameVec.launch"/>
+
+	<node name="center_robot" pkg="arc_description" type="center_robot.py"/>
+
+</launch>

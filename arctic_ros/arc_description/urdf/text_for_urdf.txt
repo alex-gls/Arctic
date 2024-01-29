@@ -1,0 +1,227 @@
+ <material name="black">
+      <color rgba="0.1 0.1 0.1 1.0"/>
+    </material>
+
+    <material name="gray">
+      <color rgba="0.4 0.4 0.4 1.0"/>
+    </material>
+
+    <material name="blue">
+      <color rgba="0.5 0.8 1 1.0"/>
+    </material>
+
+    <link name="dummy"></link>
+
+    <joint name="dummy_joint" type="fixed">
+        <parent link="dummy"/>
+        <child link="root"/>
+    </joint>
+
+    <!-- ROS control plugin -->
+    <gazebo>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>/Arctic</robotNamespace>
+      </plugin>
+    </gazebo>
+
+    <!-- IMU sensor -->
+    <gazebo reference="root">
+      <gravity>true</gravity>
+      <sensor name="imu_sensor" type="imu">
+        <always_on>true</always_on>
+        <update_rate>100</update_rate>
+        <visualize>true</visualize>
+        <topic>__default_topic__</topic>
+        <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+          <topicName>arctic_imu/base_link_orientation</topicName>
+          <bodyName>imu_link</bodyName>
+          <updateRateHZ>15.0</updateRateHZ>
+          <gaussianNoise>0.0</gaussianNoise>
+          <xyzOffset>0 0 0</xyzOffset>
+          <rpyOffset>0 0 0</rpyOffset>
+          <frameName>root</frameName>
+          <initialOrientationAsReference>false</initialOrientationAsReference>
+        </plugin>
+        <pose>0 0 0 0 0 0</pose>
+      </sensor>
+    </gazebo>
+
+    <!-- Joint state publisher plugin -->
+    <gazebo>
+      <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+          <robotNamespace>/Arctic</robotNamespace>
+          <jointName>foot_1_, foot_2_, foot_3_, foot_4_, foot_5_,
+                    foot_6_, foot_7_, foot_8_, foot_9_, foot_10_,
+                    foot_11_, foot_12_</jointName>
+          <updateRate>100</updateRate>
+      </plugin>
+    </gazebo>
+
+    <!-- Transmission -->
+    <transmission name="tran1">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="foot_1_">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>5</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran2">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="foot_2_">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>5</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran3">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="foot_3_">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>5</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran4">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="foot_4_">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>5</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran5">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="foot_5_">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor5">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>5</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran6">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="foot_6_">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor6">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>5</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran7">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="foot_7_">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor7">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>5</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran8">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="foot_8_">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor8">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>5</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran9">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="foot_9_">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor9">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>5</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran10">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="foot_10_">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor10">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>5</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran11">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="foot_11_">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor11">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>5</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran12">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="foot_12_">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor12">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>5</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <!-- FR4 friction -->
+    <gazebo reference="foot_-3">
+      <mu1>200.0</mu1>
+      <mu2>100.0</mu2>
+      <minDepth>0.0002</minDepth>
+      <kp  value="1000000.0"/>
+      <kd  value="100.0"/>
+    </gazebo>
+
+    <!-- FL4 friction -->
+    <gazebo reference="foot_-6">
+      <mu1>200.0</mu1>
+      <mu2>100.0</mu2>
+      <minDepth>0.0002</minDepth>
+      <kp  value="1000000.0"/>
+      <kd  value="100.0"/>
+    </gazebo>
+
+    <!-- RR4 friction -->
+    <gazebo reference="foot_-9">
+      <mu1>200.0</mu1>
+      <mu2>100.0</mu2>
+      <minDepth>0.0002</minDepth>
+      <kp  value="1000000.0"/>
+      <kd  value="100.0"/>
+    </gazebo>
+
+    <!-- RL4 friction -->
+    <gazebo reference="foot_-12">
+      <mu1>200.0</mu1>
+      <mu2>100.0</mu2>
+      <minDepth>0.0002</minDepth>
+      <kp  value="1000000.0"/>
+      <kd  value="100.0"/>
+    </gazebo>

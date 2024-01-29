@@ -1,0 +1,69 @@
+Arctic:
+  joint_states_controller:
+      type: joint_state_controller/JointStateController
+      publish_rate: 25
+
+  # FL Controllers ------------------------------------------------------------ 
+  foot_1_:
+      type: effort_controllers/JointPositionController
+      joint: foot_1_
+      pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+        
+  foot_2_:
+      type: effort_controllers/JointPositionController
+      joint: foot_2_
+      pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+        
+  foot_3_:
+      type: effort_controllers/JointPositionController
+      joint: foot_3_
+      pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+
+  # FR Controllers ------------------------------------------------------------ 
+  foot_4_:
+      type: effort_controllers/JointPositionController
+      joint: foot_4_
+      pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+        
+  foot_5_:
+      type: effort_controllers/JointPositionController
+      joint: foot_5_
+      pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+        
+  foot_6_:
+      type: effort_controllers/JointPositionController
+      joint: foot_6_
+      pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+
+  # RR Controllers ------------------------------------------------------------ 
+  foot_7_:
+      type: effort_controllers/JointPositionController
+      joint: foot_7_
+      pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+        
+  foot_8_:
+      type: effort_controllers/JointPositionController
+      joint: foot_8_
+      pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+        
+  foot_9_:
+      type: effort_controllers/JointPositionController
+      joint: foot_9_
+      pid: {p: 9, i: 0, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+
+  # RL Controllers ------------------------------------------------------------     
+  foot_10_:
+      type: effort_controllers/JointPositionController
+      joint: foot_10_
+      pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+        
+  foot_11_:
+      type: effort_controllers/JointPositionController
+      joint: foot_11_
+      pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+        
+  foot_12_:
+      type: effort_controllers/JointPositionController
+      joint: foot_12_
+      pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+        

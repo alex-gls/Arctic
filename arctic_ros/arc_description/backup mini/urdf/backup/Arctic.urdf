@@ -1,0 +1,715 @@
+<?xml version="1.0"?>
+<!-- created with Phobos 1.0.1 "Capricious Choutengan" -->
+  <robot name="Arctic" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <material name="black">
+      <color rgba="0 0 0 1.0"/>
+    </material>
+
+    <material name="gray">
+      <color rgba="0.3 0.3 0.3 1.0"/>
+    </material>
+
+    <material name="blue">
+      <color rgba="0.59 0.82 1 1.0"/>
+    </material>
+    
+    <link name="foot_1">
+      <inertial>
+        <origin xyz="0.15114 -0.65043 -0.15126" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00156" ixy="0" ixz="0" iyy="0.00319" iyz="0" izz="0.00102"/>
+      </inertial>
+      <visual name="-1">
+        <origin xyz="0.05544 -0.65012 -0.05587" rpy="0 -2.35619 0"/>
+        <geometry>
+          <box size="0.506 0.3427 0.356"/>
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <collision name="-1">
+        <origin xyz="0.05544 -0.65012 -0.05587" rpy="0 -2.35619 0"/>
+        <geometry>
+          <box size="0.506 0.3427 0.356"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="foot_10">
+      <inertial>
+        <origin xyz="-0.15114 0.65043 0.15126" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00156" ixy="0" ixz="0" iyy="0.00319" iyz="0" izz="0.00102"/>
+      </inertial>
+      <visual name="-10">
+        <origin xyz="-0.05544 0.65012 0.05587" rpy="0 0.7854 0"/>
+        <geometry>
+          <box size="0.506 0.3427 0.356"/>
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <collision name="-10">
+        <origin xyz="-0.05544 0.65012 0.05587" rpy="0 0.7854 0"/>
+        <geometry>
+          <box size="0.506 0.3427 0.356"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="foot_11">
+      <inertial>
+        <origin xyz="-0.46068 0.4607 0.00533" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00183" ixy="0.00077" ixz="-0.00027" iyy="0.0021" iyz="-0.00077" izz="0.00183"/>
+      </inertial>
+      <visual name="-11">
+        <origin xyz="-0.36563 0.3692 -0.00031" rpy="1.5708 0 -0.7854"/>
+        <geometry>
+          <box size="0.506 0.3427 0.356"/>
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <collision name="-11">
+        <origin xyz="-0.36563 0.3692 -0.00031" rpy="1.5708 0 -0.7854"/>
+        <geometry>
+          <box size="0.506 0.3427 0.356"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="foot_12">
+      <inertial>
+        <origin xyz="0.58373 0.93617 -0.0004" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00206" ixy="0" ixz="0" iyy="0.00205" iyz="0" izz="0.00206"/>
+      </inertial>
+      <visual name="-12">
+        <origin xyz="0.58373 0.93617 -0.0004" rpy="1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://arc_description/meshes/stl/Sphere.003.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="blue"/>
+      </visual>
+      <collision name="-12">
+        <origin xyz="0.58373 0.93617 -0.0004" rpy="1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://arc_description/meshes/stl/Sphere.007.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="foot_2">
+      <inertial>
+        <origin xyz="-0.46068 -0.4607 0.00533" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00183" ixy="-0.00077" ixz="-0.00027" iyy="0.0021" iyz="0.00077" izz="0.00183"/>
+      </inertial>
+      <visual name="-2">
+        <origin xyz="-0.36563 -0.3692 -0.00031" rpy="-1.5708 0 0.7854"/>
+        <geometry>
+          <box size="0.506 0.3427 0.356"/>
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <collision name="-2">
+        <origin xyz="-0.36563 -0.3692 -0.00031" rpy="-1.5708 0 0.7854"/>
+        <geometry>
+          <box size="0.506 0.3427 0.356"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="foot_3">
+      <inertial>
+        <origin xyz="0.58373 -0.93617 -0.0004" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00206" ixy="0" ixz="0" iyy="0.00205" iyz="0" izz="0.00206"/>
+      </inertial>
+      <visual name="-3">
+        <origin xyz="0.58373 -0.93617 -0.0004" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://arc_description/meshes/stl/Sphere.001.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="blue"/>
+      </visual>
+      <collision name="-3">
+        <origin xyz="0.58373 -0.93617 -0.0004" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://arc_description/meshes/stl/Sphere.005.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="foot_4">
+      <inertial>
+        <origin xyz="0.15114 0.65043 -0.15126" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00156" ixy="0" ixz="0" iyy="0.00319" iyz="0" izz="0.00102"/>
+      </inertial>
+      <visual name="-4">
+        <origin xyz="0.05544 0.65012 -0.05587" rpy="0 -2.35619 0"/>
+        <geometry>
+          <box size="0.506 0.3427 0.356"/>
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <collision name="-4">
+        <origin xyz="0.05544 0.65012 -0.05587" rpy="0 -2.35619 0"/>
+        <geometry>
+          <box size="0.506 0.3427 0.356"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="foot_5">
+      <inertial>
+        <origin xyz="-0.46068 0.4607 0.00533" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00183" ixy="0.00077" ixz="-0.00027" iyy="0.0021" iyz="-0.00077" izz="0.00183"/>
+      </inertial>
+      <visual name="-5">
+        <origin xyz="-0.36563 0.3692 -0.00031" rpy="1.5708 0 -0.7854"/>
+        <geometry>
+          <box size="0.506 0.3427 0.356"/>
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <collision name="-5">
+        <origin xyz="-0.36563 0.3692 -0.00031" rpy="1.5708 0 -0.7854"/>
+        <geometry>
+          <box size="0.506 0.3427 0.356"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="foot_6">
+      <inertial>
+        <origin xyz="0.58373 0.93617 -0.0004" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00206" ixy="0" ixz="0" iyy="0.00205" iyz="0" izz="0.00206"/>
+      </inertial>
+      <visual name="-6">
+        <origin xyz="0.58373 0.93617 -0.0004" rpy="1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://arc_description/meshes/stl/Sphere.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="blue"/>
+      </visual>
+      <collision name="-6">
+        <origin xyz="0.58373 0.93617 -0.0004" rpy="1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://arc_description/meshes/stl/Sphere.004.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="foot_7">
+      <inertial>
+        <origin xyz="-0.15114 -0.65043 0.15126" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00156" ixy="0" ixz="0" iyy="0.00319" iyz="0" izz="0.00102"/>
+      </inertial>
+      <visual name="-7">
+        <origin xyz="-0.05544 -0.65012 0.05587" rpy="0 0.7854 0"/>
+        <geometry>
+          <box size="0.506 0.3427 0.356"/>
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <collision name="-7">
+        <origin xyz="-0.05544 -0.65012 0.05587" rpy="0 0.7854 0"/>
+        <geometry>
+          <box size="0.506 0.3427 0.356"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="foot_8">
+      <inertial>
+        <origin xyz="-0.46067 -0.4607 0.00533" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00183" ixy="-0.00077" ixz="-0.00027" iyy="0.0021" iyz="0.00077" izz="0.00183"/>
+      </inertial>
+      <visual name="-8">
+        <origin xyz="-0.36563 -0.3692 -0.00031" rpy="-1.5708 0 0.7854"/>
+        <geometry>
+          <box size="0.506 0.3427 0.356"/>
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <collision name="-8">
+        <origin xyz="-0.36563 -0.3692 -0.00031" rpy="-1.5708 0 0.7854"/>
+        <geometry>
+          <box size="0.506 0.3427 0.356"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="foot_9">
+      <inertial>
+        <origin xyz="0.58373 -0.93617 -0.0004" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00206" ixy="0" ixz="0" iyy="0.00205" iyz="0" izz="0.00206"/>
+      </inertial>
+      <visual name="-9">
+        <origin xyz="0.58373 -0.93617 -0.0004" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://arc_description/meshes/stl/Sphere.002.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="blue"/>
+      </visual>
+      <collision name="-9">
+        <origin xyz="0.58373 -0.93617 -0.0004" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://arc_description/meshes/stl/Sphere.008.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="root">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1.5"/>
+        <inertia ixx="0.47405" ixy="0" ixz="0" iyy="0.38544" iyz="0" izz="0.54369"/>
+      </inertial>
+      <visual name="Cube.003">
+        <origin xyz="-1.11565 0.27566 0.36734" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.30848 0.25 0.28487"/>
+        </geometry>
+        <material name="gray"/>
+      </visual>
+      <visual name="Cube.004">
+        <origin xyz="1.09014 -0.35069 -0.00077" rpy="0 0 -1.5708"/>
+        <geometry>
+          <box size="0.506 0.3427 0.356"/>
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <visual name="Cube.016">
+        <origin xyz="-1.11565 -0.27566 0.36734" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.30848 0.25 0.28487"/>
+        </geometry>
+        <material name="gray"/>
+      </visual>
+      <visual name="Cube.019">
+        <origin xyz="1.09014 0.35069 -0.00077" rpy="0 0 -1.5708"/>
+        <geometry>
+          <box size="0.506 0.3427 0.356"/>
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <visual name="Cube.020">
+        <origin xyz="-1.14054 -0.35069 -0.00077" rpy="0 0 -1.5708"/>
+        <geometry>
+          <box size="0.506 0.3427 0.356"/>
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <visual name="Cube.021">
+        <origin xyz="-1.14054 0.35069 -0.00077" rpy="0 0 -1.5708"/>
+        <geometry>
+          <box size="0.506 0.3427 0.356"/>
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <visual name="Cube.022">
+        <origin xyz="-1.11565 -0.27566 -0.36734" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.30848 0.25 0.28487"/>
+        </geometry>
+        <material name="gray"/>
+      </visual>
+      <visual name="Cube.023">
+        <origin xyz="-1.11565 0.27566 -0.36734" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.30848 0.25 0.28487"/>
+        </geometry>
+        <material name="gray"/>
+      </visual>
+      <visual name="Cube.024">
+        <origin xyz="1.11565 0.27566 0.36734" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.30848 0.25 0.28487"/>
+        </geometry>
+        <material name="gray"/>
+      </visual>
+      <visual name="Cube.025">
+        <origin xyz="1.11565 0.27566 -0.36734" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.30848 0.25 0.28487"/>
+        </geometry>
+        <material name="gray"/>
+      </visual>
+      <visual name="Cube.026">
+        <origin xyz="1.11565 -0.27566 0.36734" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.30848 0.25 0.28487"/>
+        </geometry>
+        <material name="gray"/>
+      </visual>
+      <visual name="Cube.027">
+        <origin xyz="1.11565 -0.27566 -0.36734" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.30848 0.25 0.28487"/>
+        </geometry>
+        <material name="gray"/>
+      </visual>
+      <visual name="back">
+        <origin xyz="-1.67825 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://arc_description/meshes/stl/Cube.042.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="gray"/>
+      </visual>
+      <visual name="body">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://arc_description/meshes/stl/Cube.040.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="gray"/>
+      </visual>
+      <visual name="front">
+        <origin xyz="1.67894 0 0.0685" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://arc_description/meshes/stl/Cube.041.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="gray"/>
+      </visual>
+      <collision name="Cube.003">
+        <origin xyz="-1.11565 0.27566 0.36734" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.30848 0.25 0.28487"/>
+        </geometry>
+      </collision>
+      <collision name="Cube.004">
+        <origin xyz="1.09014 -0.35069 -0.00077" rpy="0 0 -1.5708"/>
+        <geometry>
+          <box size="0.506 0.3427 0.356"/>
+        </geometry>
+      </collision>
+      <collision name="Cube.016">
+        <origin xyz="-1.11565 -0.27566 0.36734" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.30848 0.25 0.28487"/>
+        </geometry>
+      </collision>
+      <collision name="Cube.019">
+        <origin xyz="1.09014 0.35069 -0.00077" rpy="0 0 -1.5708"/>
+        <geometry>
+          <box size="0.506 0.3427 0.356"/>
+        </geometry>
+      </collision>
+      <collision name="Cube.020">
+        <origin xyz="-1.14054 -0.35069 -0.00077" rpy="0 0 -1.5708"/>
+        <geometry>
+          <box size="0.506 0.3427 0.356"/>
+        </geometry>
+      </collision>
+      <collision name="Cube.021">
+        <origin xyz="-1.14054 0.35069 -0.00077" rpy="0 0 -1.5708"/>
+        <geometry>
+          <box size="0.506 0.3427 0.356"/>
+        </geometry>
+      </collision>
+      <collision name="Cube.022">
+        <origin xyz="-1.11565 -0.27566 -0.36734" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.30848 0.25 0.28487"/>
+        </geometry>
+      </collision>
+      <collision name="Cube.023">
+        <origin xyz="-1.11565 0.27566 -0.36734" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.30848 0.25 0.28487"/>
+        </geometry>
+      </collision>
+      <collision name="Cube.024">
+        <origin xyz="1.11565 0.27566 0.36734" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.30848 0.25 0.28487"/>
+        </geometry>
+      </collision>
+      <collision name="Cube.025">
+        <origin xyz="1.11565 0.27566 -0.36734" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.30848 0.25 0.28487"/>
+        </geometry>
+      </collision>
+      <collision name="Cube.026">
+        <origin xyz="1.11565 -0.27566 0.36734" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.30848 0.25 0.28487"/>
+        </geometry>
+      </collision>
+      <collision name="Cube.027">
+        <origin xyz="1.11565 -0.27566 -0.36734" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.30848 0.25 0.28487"/>
+        </geometry>
+      </collision>
+      <collision name="back">
+        <origin xyz="-1.67825 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://arc_description/meshes/stl/Cube.059.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+      <collision name="body">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://arc_description/meshes/stl/Cube.057.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+      <collision name="front">
+        <origin xyz="1.67894 0 0.0685" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://arc_description/meshes/stl/Cube.058.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="foot_1_" type="revolute">
+      <origin xyz="1.09658 -0.484 -0.00185" rpy="0 1.5708 0"/>
+      <parent link="root"/>
+      <child link="foot_1"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.57" upper="1.57" effort="50" velocity="59"/>
+    </joint>
+
+    <joint name="foot_2_" type="revolute">
+      <origin xyz="0.15114 -0.65043 -0.15126" rpy="1.5708 -1.5708 0"/>
+      <parent link="foot_1"/>
+      <child link="foot_2"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.57" upper="1.57" effort="50" velocity="59"/>
+    </joint>
+
+    <joint name="foot_3_" type="revolute">
+      <origin xyz="-0.46068 -0.4607 0.00533" rpy="0 0 0"/>
+      <parent link="foot_2"/>
+      <child link="foot_3"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.57" upper="1.57" effort="50" velocity="59"/>
+    </joint>
+
+    <joint name="foot_4_" type="revolute">
+      <origin xyz="1.09658 0.484 -0.00184" rpy="0 1.5708 0"/>
+      <parent link="root"/>
+      <child link="foot_4"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.57" upper="1.57" effort="50" velocity="59"/>
+    </joint>
+
+    <joint name="foot_5_" type="revolute">
+      <origin xyz="0.15114 0.65043 -0.15126" rpy="-1.5708 -1.5708 0"/>
+      <parent link="foot_4"/>
+      <child link="foot_5"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.57" upper="1.57" effort="50" velocity="59"/>
+    </joint>
+
+    <joint name="foot_6_" type="revolute">
+      <origin xyz="-0.46068 0.4607 0.00533" rpy="0 0 0"/>
+      <parent link="foot_5"/>
+      <child link="foot_6"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.57" upper="1.57" effort="50" velocity="59"/>
+    </joint>
+
+    <joint name="foot_7_" type="revolute">
+      <origin xyz="-1.13411 -0.484 -0.00185" rpy="0 -1.5708 0"/>
+      <parent link="root"/>
+      <child link="foot_7"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.57" upper="1.57" effort="50" velocity="59"/>
+    </joint>
+
+    <joint name="foot_8_" type="revolute">
+      <origin xyz="-0.15114 -0.65043 0.15126" rpy="1.5708 1.5708 0"/>
+      <parent link="foot_7"/>
+      <child link="foot_8"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.57" upper="1.57" effort="50" velocity="59"/>
+    </joint>
+
+    <joint name="foot_9_" type="revolute">
+      <origin xyz="-0.46067 -0.4607 0.00533" rpy="0 0 0"/>
+      <parent link="foot_8"/>
+      <child link="foot_9"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.57" upper="1.57" effort="50" velocity="59"/>
+    </joint>
+
+    <joint name="foot_10_" type="revolute">
+      <origin xyz="-1.13411 0.484 -0.00185" rpy="0 -1.5708 0"/>
+      <parent link="root"/>
+      <child link="foot_10"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.57" upper="1.57" effort="50" velocity="59"/>
+    </joint>
+
+    <joint name="foot_11_" type="revolute">
+      <origin xyz="-0.15114 0.65043 0.15126" rpy="-1.5708 1.5708 0"/>
+      <parent link="foot_10"/>
+      <child link="foot_11"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.57" upper="1.57" effort="50" velocity="59"/>
+    </joint>
+
+    <joint name="foot_12_" type="revolute">
+      <origin xyz="-0.46068 0.4607 0.00533" rpy="0 0 0"/>
+      <parent link="foot_11"/>
+      <child link="foot_12"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.57" upper="1.57" effort="50" velocity="59"/>
+    </joint>
+
+    <link name="dummy"></link>
+
+    <joint name="dummy_joint" type="fixed">
+        <parent link="dummy"/>
+        <child link="root"/>
+    </joint>
+
+    <!-- Plugin for connnect ROS and Gazebo -->
+    <gazebo>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>/Arctic</robotNamespace>
+      </plugin>
+    </gazebo> 
+  
+    <!-- Transmission -->
+    <transmission name="tran1">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="foot_1_">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran2">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="foot_2_">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran3">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="foot_3_">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran4">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="foot_4_">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran5">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="foot_5_">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor5">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran6">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="foot_6_">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor6">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran7">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="foot_7_">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor7">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran8">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="foot_8_">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor8">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran9">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="foot_9_">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor9">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran10">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="foot_10_">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor10">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran11">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="foot_11_">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor11">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran12">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="foot_12_">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor12">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+  </robot>

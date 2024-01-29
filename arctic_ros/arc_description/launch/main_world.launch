@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <!-- Path model -->
+    <!-- <arg name="model" default="$(find arc_description)/urdf/Arctic.urdf"/> -->
+    <arg name="model" default="$(find arc_description)/urdf/robot_core.xacro"/>
+    <arg name="box" default="$(find arc_description)/urdf/Box.urdf"/>
+    <arg name="polygon" default="$(find arc_description)/urdf/Polygon.urdf"/>
+    <arg name="rviz" default="false"/>
+
+    <arg name ="polygon_spawn" default="false"/>
+
+    <!-- Rviz -->
+    <group if="$(arg rviz)">   
+        <include file="$(find arc_description)/launch/rviz_robot.launch"/>
+    </group>
+
+    <!-- Gazebo --> 
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find arc_description)/world/world.world" />
+        <arg name="paused" value="false"/>
+        <arg name="use_sim_time" value="true"/>
+        <arg name="headless" value="false"/>
+        <arg name="debug" value="false"/>
+    </include>
+
+    <!-- Convert an xacro and put on parameter server -->
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)" />
+
+    <param name="box_description" command="$(find xacro)/xacro --inorder $(arg box)" />
+
+    <group if="$(arg polygon_spawn)">
+        <param name="polygon_description" command="$(find xacro)/xacro --inorder $(arg polygon)" />
+        <node name="spawn_Polygon" pkg="gazebo_ros" type="spawn_model" args="-param polygon_description -urdf -x 5 -y 0 -z 0.5 -model Polygon" />
+    </group>
+
+    <!-- Spawn a robot into Gazebo -->
+    <node name="spawn_Arctic" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -x 0 -y 0 -z 0.5 -model Arctic" />
+
+    <!-- <node name="spawn_Box" pkg="gazebo_ros" type="spawn_model" args="-param box_description -urdf -x 0 -y 0 -z 0 -model Box" /> -->
+
+    <!-- Controllers -->  
+    <rosparam file="$(find arc_description)/config/controllers.yaml" command="load"/>
+
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" output="screen" ns="/Arctic"
+          args="foot_1_ foot_2_ foot_3_
+                foot_4_ foot_5_ foot_6_
+                foot_7_ foot_8_ foot_9_
+                foot_10_ foot_11_ foot_12_"/>
+
+    <!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen"></node> -->
+    <group unless="$(arg rviz)"> 
+        <include file="$(find arc_controler)/launch/GameVec.launch"/>
+    </group>
+
+</launch>

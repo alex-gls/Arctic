@@ -1,0 +1,66 @@
+Arctic:
+  joint_states_controller:
+      type: joint_state_controller/JointStateController
+      publish_rate: 100
+
+  foot_1_:
+      type: effort_controllers/JointPositionController
+      joint: foot_1_
+      pid: {p: 8, i: 3, d: 0.25}
+        
+  foot_2_:
+      type: effort_controllers/JointPositionController
+      joint: foot_2_
+      pid: {p: 8, i: 3, d: 0.25}
+        
+  foot_3_:
+      type: effort_controllers/JointPositionController
+      joint: foot_3_
+      pid: {p: 8, i: 3, d: 0.25}
+
+  foot_4_:
+      type: effort_controllers/JointPositionController
+      joint: foot_4_
+      pid: {p: 8, i: 3, d: 0.25}
+        
+  foot_5_:
+      type: effort_controllers/JointPositionController
+      joint: foot_5_
+      pid: {p: 8, i: 3, d: 0.25}
+        
+  foot_6_:
+      type: effort_controllers/JointPositionController
+      joint: foot_6_
+      pid: {p: 8, i: 3, d: 0.25}
+
+  foot_7_:
+      type: effort_controllers/JointPositionController
+      joint: foot_7_
+      pid: {p: 8, i: 3, d: 0.25}
+        
+  foot_8_:
+      type: effort_controllers/JointPositionController
+      joint: foot_8_
+      pid: {p: 8, i: 3, d: 0.25}
+        
+  foot_9_:
+      type: effort_controllers/JointPositionController
+      joint: foot_9_
+      pid: {p: 8, i: 3, d: 0.25}
+
+  foot_10_:
+      type: effort_controllers/JointPositionController
+      joint: foot_10_
+      pid: {p: 8, i: 3, d: 0.25}
+        
+  foot_11_:
+      type: effort_controllers/JointPositionController
+      joint: foot_11_
+      pid: {p: 8, i: 3, d: 0.25}
+        
+  foot_12_:
+      type: effort_controllers/JointPositionController
+      joint: foot_12_
+      pid: {p: 8, i: 3, d: 0.25}
+
+    
